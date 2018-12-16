@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var languageControl: UISegmentedControl!
+    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var setupNotificationsButton: UIButton!
+    
+    @IBAction func setupNotifications(_ sender: UIButton) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound])
+        { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Learn a Word a Day"
+        self.setupNotificationsButton.layer.cornerRadius = 10
+        self.setupNotificationsButton.layer.borderWidth = 1
+        self.setupNotificationsButton.layer.borderColor = UIColor(red:0.20, green:0.29, blue:0.81, alpha:1.0).cgColor
     }
-
-
 }
-
