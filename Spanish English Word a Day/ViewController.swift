@@ -15,11 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var setupNotificationsButton: UIButton!
     
     @IBAction func setupNotifications(_ sender: UIButton) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound])
-        { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
+        print("date = \(self.timePicker.date)")
+        Notifications().setup(notificationTime: self.timePicker.date)
     }
     
     override func viewDidLoad() {
