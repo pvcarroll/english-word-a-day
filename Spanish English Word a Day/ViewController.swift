@@ -16,7 +16,17 @@ class ViewController: UIViewController {
     
     @IBAction func setupNotifications(_ sender: UIButton) {
         print("date = \(self.timePicker.date)")
-        Notifications().setup(notificationTime: self.timePicker.date)
+        Notifications().setup(notificationTime: self.timePicker.date, completion: {
+            let alertController = UIAlertController(
+                title: "Notificaciones Programadas (Notifications Scheduled)",
+                message: "Recibirá 1 notificación al día durante los próximos 63 días.  (You will receive 1 notification a day for the next 63 days)",
+                preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Aceptar (OK)", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            DispatchQueue.main.async {
+                self.present(alertController, animated: true)
+            }
+        })
     }
     
     override func viewDidLoad() {
