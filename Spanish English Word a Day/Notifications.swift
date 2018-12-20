@@ -18,15 +18,20 @@ class Notifications {
                 print("ERROR Requesting Authorization = \(err)")
                 return
             }
-            self.schedule(time: notificationTime, completion: completion)
+            self.schedule(notificationDate: notificationTime, completion: completion)
         }
     }
     
-    func schedule(time: Date, completion: @escaping () -> ()) {
-
+    func schedule(notificationDate: Date, completion: @escaping () -> ()) {
+        let firstNotificationDate: Date
+        if notificationDate < Date() {
+            firstNotificationDate = Calendar.current.date(byAdding: .day, value: 1, to: notificationDate) ?? notificationDate
+        } else {
+            firstNotificationDate = notificationDate
+        }
         let englishWords = Array(Dictionary.nouns.keys)
         for i in 0..<englishWords.count {
-            guard let nextDay = Calendar.current.date(byAdding: .day, value: i, to: time) else { return }
+            guard let nextDay = Calendar.current.date(byAdding: .day, value: i, to: firstNotificationDate) else { return }
             let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextDay)
             let englishWord = englishWords[i]
             let spanishWord = Dictionary.nouns[englishWord] ?? "ay-ay-ay no hay palabra"
