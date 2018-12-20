@@ -6,7 +6,7 @@
 //  Copyright © 2018 Paul Carroll. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
 class Notifications {
@@ -23,19 +23,20 @@ class Notifications {
     }
     
     func schedule(time: Date, completion: @escaping () -> ()) {
-        let startingDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: time)
+
         let englishWords = Array(Dictionary.nouns.keys)
-        
         for i in 0..<englishWords.count {
+            guard let nextDay = Calendar.current.date(byAdding: .day, value: i, to: time) else { return }
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextDay)
             let englishWord = englishWords[i]
             let spanishWord = Dictionary.nouns[englishWord] ?? "ay-ay-ay no hay palabra"
             let content = UNMutableNotificationContent()
-            content.title = self.getTitle(hour: startingDateComponents.hour ?? 12)
+            content.title = self.getTitle(hour: dateComponents.hour ?? 12)
             content.subtitle = "palabra para el dia (word for the day):"
             content.body = "\(englishWord) - \(spanishWord)"
-            let trigger = UNCalendarNotificationTrigger(dateMatching: startingDateComponents, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
-            let request = UNNotificationRequest(identifier: "1", content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: "notification-\(i)", content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
                 if let err = error {
