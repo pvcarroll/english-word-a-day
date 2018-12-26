@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var wordsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var languageControl: UISegmentedControl!
     @IBOutlet weak var mainMessageLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
@@ -23,7 +24,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func setupNotifications(_ sender: UIButton) {
-        print("date = \(self.timePicker.date)")
         Notifications().setup(notificationTime: self.timePicker.date, completion: {
             let title: String
             let message: String
@@ -50,18 +50,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Learn a Word a Day"
+        self.title = Messages.Title.spanish.rawValue
+        wordsBarButtonItem.title = Messages.Words.spanish.rawValue
         mainMessageLabel.text = Messages.MainMessage.spanish.rawValue
         self.setupNotificationsButton.layer.cornerRadius = 10
         self.setupNotificationsButton.layer.borderWidth = 1
-        self.setupNotificationsButton.layer.borderColor = UIColor(red:0.20, green:0.29, blue:0.81, alpha:1.0).cgColor
+        self.setupNotificationsButton.layer.borderColor = UIColor(red: 0.20, green: 0.29, blue: 0.81, alpha: 1.0).cgColor
     }
     
     private func updateStrings(selectedSegmentIndex: Int) {
         if selectedSegmentIndex == 0 {
+            title = Messages.Title.spanish.rawValue
+            wordsBarButtonItem.title = Messages.Words.spanish.rawValue
             mainMessageLabel.text = Messages.MainMessage.spanish.rawValue
             setupNotificationsButton.setTitle(Messages.SetupNotifications.spanish.rawValue, for: .normal)
         } else {
+            title = Messages.Title.english.rawValue
+            wordsBarButtonItem.title = Messages.Words.english.rawValue
             mainMessageLabel.text = Messages.MainMessage.english.rawValue
             setupNotificationsButton.setTitle(Messages.SetupNotifications.english.rawValue, for: .normal)
         }
@@ -69,6 +74,16 @@ class ViewController: UIViewController {
 }
 
 struct Messages {
+    enum Title: String {
+        case english = "Word a Day"
+        case spanish = "Palabra al dia"
+    }
+    
+    enum Words: String {
+        case english = "Words"
+        case spanish = "Palabras"
+    }
+    
     enum MainMessage: String {
         case english = "Pick a time and receive daily notifications with an English word"
         case spanish = "Elija una hora y reciba notificaciones diarias con una palabra en inglés"
