@@ -29,12 +29,11 @@ class Notifications {
         } else {
             firstNotificationDate = notificationDate
         }
-        let englishWords = Array(Dictionary.nouns.keys)
-        for i in 0..<englishWords.count {
+        for i in 0..<Words.words.count {
             guard let nextDay = Calendar.current.date(byAdding: .day, value: i, to: firstNotificationDate) else { return }
             let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextDay)
-            let englishWord = englishWords[i]
-            let spanishWord = Dictionary.nouns[englishWord] ?? "ay-ay-ay no hay palabra"
+            let englishWord = Words.words[i].english
+            let spanishWord = Words.words[i].spanish
             let content = UNMutableNotificationContent()
             content.title = self.getTitle(hour: dateComponents.hour ?? 12)
             content.subtitle = "palabra para el dia (word for the day):"
@@ -48,7 +47,7 @@ class Notifications {
                     print ("ERROR adding notification request: \(err)")
                     return
                 }
-                if i == englishWords.count - 1 {
+                if i == Words.words.count - 1 {
                     completion()
                 }
             })

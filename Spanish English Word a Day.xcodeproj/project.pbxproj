@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7536734121C561D7004C66B5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734021C561D7004C66B5 /* Dictionary.swift */; };
+		7536734121C561D7004C66B5 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734021C561D7004C66B5 /* Words.swift */; };
 		7536734321C5FA88004C66B5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734221C5FA88004C66B5 /* Notifications.swift */; };
 		7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */; };
 		7552BA2421C4CB2B00CCD738 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2321C4CB2B00CCD738 /* ViewController.swift */; };
@@ -16,6 +16,8 @@
 		7552BA2C21C4CB2B00CCD738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BA2A21C4CB2B00CCD738 /* LaunchScreen.storyboard */; };
 		7552BA3721C4CB2C00CCD738 /* Spanish_English_Word_a_DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA3621C4CB2C00CCD738 /* Spanish_English_Word_a_DayTests.swift */; };
 		7552BA4221C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA4121C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift */; };
+		7553FEF821D4234200EC3152 /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FEF721D4234200EC3152 /* WordTableViewCell.swift */; };
+		7553FEFA21D42CE000EC3152 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FEF921D42CE000EC3152 /* WordsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7536734021C561D7004C66B5 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		7536734021C561D7004C66B5 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		7536734221C5FA88004C66B5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7552BA1E21C4CB2B00CCD738 /* Spanish English Word a Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish English Word a Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		7552BA3D21C4CB2C00CCD738 /* Spanish English Word a DayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spanish English Word a DayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552BA4121C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish_English_Word_a_DayUITests.swift; sourceTree = "<group>"; };
 		7552BA4321C4CB2C00CCD738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7553FEF721D4234200EC3152 /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
+		7553FEF921D42CE000EC3152 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7549D63721E039CC0082320E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7536734021C561D7004C66B5 /* Words.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7552BA1521C4CB2B00CCD738 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +113,16 @@
 		7552BA2021C4CB2B00CCD738 /* Spanish English Word a Day */ = {
 			isa = PBXGroup;
 			children = (
+				7549D63721E039CC0082320E /* Model */,
+				7553FEF621D4231900EC3152 /* Views */,
 				7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */,
 				7552BA2321C4CB2B00CCD738 /* ViewController.swift */,
+				7553FEF921D42CE000EC3152 /* WordsViewController.swift */,
 				7536734221C5FA88004C66B5 /* Notifications.swift */,
 				7552BA2521C4CB2B00CCD738 /* Main.storyboard */,
 				7552BA2821C4CB2B00CCD738 /* Assets.xcassets */,
 				7552BA2A21C4CB2B00CCD738 /* LaunchScreen.storyboard */,
 				7552BA2D21C4CB2C00CCD738 /* Info.plist */,
-				7536734021C561D7004C66B5 /* Dictionary.swift */,
 			);
 			path = "Spanish English Word a Day";
 			sourceTree = "<group>";
@@ -129,6 +143,14 @@
 				7552BA4321C4CB2C00CCD738 /* Info.plist */,
 			);
 			path = "Spanish English Word a DayUITests";
+			sourceTree = "<group>";
+		};
+		7553FEF621D4231900EC3152 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7553FEF721D4234200EC3152 /* WordTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7553FEFA21D42CE000EC3152 /* WordsViewController.swift in Sources */,
 				7536734321C5FA88004C66B5 /* Notifications.swift in Sources */,
 				7552BA2421C4CB2B00CCD738 /* ViewController.swift in Sources */,
 				7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */,
-				7536734121C561D7004C66B5 /* Dictionary.swift in Sources */,
+				7536734121C561D7004C66B5 /* Words.swift in Sources */,
+				7553FEF821D4234200EC3152 /* WordTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
