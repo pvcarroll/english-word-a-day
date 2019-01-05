@@ -37,12 +37,12 @@ class MainViewController: UIViewController {
                 message = Messages.notificationsScheduledBody.english
                 okMessage = Messages.ok.english
             }
-            let alertController = UIAlertController(title: title,
-                                                    message: message,
-                                                    preferredStyle: .alert)
-            let okAction = UIAlertAction(title: okMessage, style: .default, handler: nil)
-            alertController.addAction(okAction)
             DispatchQueue.main.async {
+                let alertController = UIAlertController(title: title,
+                                                        message: message,
+                                                        preferredStyle: .alert)
+                let okAction = UIAlertAction(title: okMessage, style: .default, handler: nil)
+                alertController.addAction(okAction)
                 self.present(alertController, animated: true)
             }
         })
