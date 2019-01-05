@@ -12,6 +12,8 @@ class WordsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var english = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -25,7 +27,7 @@ extension WordsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Palabras para aprender / Words to learn"
+        return english ? Messages.header.english : Messages.header.spanish
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,13 +36,30 @@ extension WordsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.selectionStyle = .none
         let word = Words.words[indexPath.row]
         cell.textLabel?.text = "\(word.english) (\(word.spanish))"
+        // TODO: remember previous selection
         cell.accessoryType = .checkmark
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         return cell
     }
 }
 
 extension WordsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
+    }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
+    }
+}
+
+fileprivate struct Messages {
+    static let header = Word(english: "Words to learn", spanish: "Palabras para aprender")
 }

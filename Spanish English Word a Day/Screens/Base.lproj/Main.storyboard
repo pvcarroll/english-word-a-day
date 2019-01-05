@@ -102,7 +102,7 @@
                     <navigationItem key="navigationItem" title="Palabra al dia" id="eKr-dX-iIC">
                         <barButtonItem key="rightBarButtonItem" title="Words" id="jdG-oB-tjp">
                             <connections>
-                                <segue destination="qn7-lP-yym" kind="show" id="ngP-NX-1cF"/>
+                                <segue destination="qn7-lP-yym" kind="show" identifier="toWords" id="ngP-NX-1cF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
