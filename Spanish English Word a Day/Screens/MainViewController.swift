@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Spanish English Word a Day
 //
 //  Created by Paul Carroll on 12/14/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var wordsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var languageControl: UISegmentedControl!

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5XG-ef-qmr">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Palabra al dia-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Spanish_English_Word_a_Day" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzu-Hj-mDO">
+                                <rect key="frame" x="7.5" y="84" width="305" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="88I-SK-CbO"/>
+                                </constraints>
+                                <string key="text">Language to learn (idioma para aprender):
+)
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pPW-LQ-MkA">
+                                <rect key="frame" x="35" y="112.5" width="250" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="3Re-Cl-wfg"/>
+                                    <constraint firstAttribute="height" constant="30" id="PB5-Ah-q8I"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Inglés (English)"/>
+                                    <segment title="Spanish (Español)"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchLanguage:" destination="BYZ-38-t0r" eventType="valueChanged" id="KO7-p6-ZJw"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-9P-cGe">
+                                <rect key="frame" x="0.0" y="162.5" width="320" height="299"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elija una hora y reciba notificaciones diarias con una palabra en inglés" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4W-BQ-CwG">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="TYd-8r-60g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-t4-8Q0">
+                                        <rect key="frame" x="0.0" y="67" width="320" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="faM-Xt-eIx"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="566585588.18609905">
+                                            <!--2018-12-15 16:53:08 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fc-mI-ea4">
+                                        <rect key="frame" x="50" y="249" width="220" height="50"/>
+                                        <color key="backgroundColor" red="0.19607843137254902" green="0.29019607843137252" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="WeI-P7-ROk"/>
+                                            <constraint firstAttribute="height" constant="50" id="Yso-Mk-8FN"/>
+                                        </constraints>
+                                        <state key="normal" title="Configurar Notificaciones">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setupNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zrm-lc-mYU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="M4W-BQ-CwG" secondAttribute="trailing" constant="20" id="M70-Va-Rjx"/>
+                                    <constraint firstItem="M4W-BQ-CwG" firstAttribute="leading" secondItem="qMn-9P-cGe" secondAttribute="leading" constant="20" id="bPr-US-Dsf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lzu-Hj-mDO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1BS-G5-F53"/>
+                            <constraint firstItem="qMn-9P-cGe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pPW-LQ-MkA" secondAttribute="bottom" constant="20" id="2at-fS-pbJ"/>
+                            <constraint firstItem="qMn-9P-cGe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="750" id="49i-Y6-hoq"/>
+                            <constraint firstItem="lzu-Hj-mDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5iO-MI-fyx"/>
+                            <constraint firstAttribute="trailing" secondItem="qMn-9P-cGe" secondAttribute="trailing" id="LQe-ul-27O"/>
+                            <constraint firstItem="qMn-9P-cGe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NX0-5o-loY"/>
+                            <constraint firstItem="pPW-LQ-MkA" firstAttribute="top" secondItem="lzu-Hj-mDO" secondAttribute="bottom" constant="8.5" id="dC2-o2-lYS"/>
+                            <constraint firstItem="pPW-LQ-MkA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j6q-gx-5xO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Palabra al dia" id="eKr-dX-iIC">
+                        <barButtonItem key="rightBarButtonItem" title="Words" id="jdG-oB-tjp">
+                            <connections>
+                                <segue destination="qn7-lP-yym" kind="show" id="ngP-NX-1cF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="languageControl" destination="pPW-LQ-MkA" id="8Md-1Q-psP"/>
+                        <outlet property="mainMessageLabel" destination="M4W-BQ-CwG" id="yap-pT-yce"/>
+                        <outlet property="setupNotificationsButton" destination="1Fc-mI-ea4" id="gpj-Sh-O2O"/>
+                        <outlet property="timePicker" destination="gRZ-t4-8Q0" id="jnX-SK-OBU"/>
+                        <outlet property="wordsBarButtonItem" destination="jdG-oB-tjp" id="pqt-g3-Z4S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132.5" y="132.04225352112675"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F7K-Hw-YY1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5XG-ef-qmr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="88F-RV-QoS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lan-MY-qqh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXb-5C-7B9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="132.04225352112675"/>
+        </scene>
+        <!--Words-->
+        <scene sceneID="gnQ-sO-XKB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Words" id="qn7-lP-yym" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JU5-cH-sDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.75" y="135.21126760563379"/>
+        </scene>
+    </scenes>
+</document>

@@ -20,6 +20,14 @@ class WordsViewController: UIViewController {
 }
 
 extension WordsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Palabras para aprender / Words to learn"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Words.words.count
     }

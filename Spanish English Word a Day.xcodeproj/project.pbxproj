@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		7536734121C561D7004C66B5 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734021C561D7004C66B5 /* Words.swift */; };
 		7536734321C5FA88004C66B5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734221C5FA88004C66B5 /* Notifications.swift */; };
+		7549D63A21E03E900082320E /* Words.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7549D63821E03E900082320E /* Words.storyboard */; };
 		7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */; };
-		7552BA2421C4CB2B00CCD738 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2321C4CB2B00CCD738 /* ViewController.swift */; };
+		7552BA2421C4CB2B00CCD738 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2321C4CB2B00CCD738 /* MainViewController.swift */; };
 		7552BA2721C4CB2B00CCD738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BA2521C4CB2B00CCD738 /* Main.storyboard */; };
 		7552BA2921C4CB2B00CCD738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7552BA2821C4CB2B00CCD738 /* Assets.xcassets */; };
 		7552BA2C21C4CB2B00CCD738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BA2A21C4CB2B00CCD738 /* LaunchScreen.storyboard */; };
 		7552BA3721C4CB2C00CCD738 /* Spanish_English_Word_a_DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA3621C4CB2C00CCD738 /* Spanish_English_Word_a_DayTests.swift */; };
 		7552BA4221C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA4121C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift */; };
-		7553FEF821D4234200EC3152 /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FEF721D4234200EC3152 /* WordTableViewCell.swift */; };
 		7553FEFA21D42CE000EC3152 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FEF921D42CE000EC3152 /* WordsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +40,10 @@
 /* Begin PBXFileReference section */
 		7536734021C561D7004C66B5 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		7536734221C5FA88004C66B5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7549D63921E03E900082320E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Spanish English Word a Day/Base.lproj/Words.storyboard"; sourceTree = "<group>"; };
 		7552BA1E21C4CB2B00CCD738 /* Spanish English Word a Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish English Word a Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7552BA2321C4CB2B00CCD738 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7552BA2321C4CB2B00CCD738 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7552BA2621C4CB2B00CCD738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7552BA2821C4CB2B00CCD738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7552BA2B21C4CB2B00CCD738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		7552BA3D21C4CB2C00CCD738 /* Spanish English Word a DayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spanish English Word a DayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552BA4121C4CB2C00CCD738 /* Spanish_English_Word_a_DayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish_English_Word_a_DayUITests.swift; sourceTree = "<group>"; };
 		7552BA4321C4CB2C00CCD738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7553FEF721D4234200EC3152 /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		7553FEF921D42CE000EC3152 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +90,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7549D63B21E03EAF0082320E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7552BA2521C4CB2B00CCD738 /* Main.storyboard */,
+				7552BA2321C4CB2B00CCD738 /* MainViewController.swift */,
+				7549D63821E03E900082320E /* Words.storyboard */,
+				7553FEF921D42CE000EC3152 /* WordsViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		7552BA1521C4CB2B00CCD738 = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				7549D63721E039CC0082320E /* Model */,
+				7549D63B21E03EAF0082320E /* Screens */,
 				7553FEF621D4231900EC3152 /* Views */,
 				7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */,
-				7552BA2321C4CB2B00CCD738 /* ViewController.swift */,
-				7553FEF921D42CE000EC3152 /* WordsViewController.swift */,
 				7536734221C5FA88004C66B5 /* Notifications.swift */,
-				7552BA2521C4CB2B00CCD738 /* Main.storyboard */,
 				7552BA2821C4CB2B00CCD738 /* Assets.xcassets */,
 				7552BA2A21C4CB2B00CCD738 /* LaunchScreen.storyboard */,
 				7552BA2D21C4CB2C00CCD738 /* Info.plist */,
@@ -148,7 +157,6 @@
 		7553FEF621D4231900EC3152 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7553FEF721D4234200EC3152 /* WordTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 			files = (
 				7552BA2C21C4CB2B00CCD738 /* LaunchScreen.storyboard in Resources */,
 				7552BA2921C4CB2B00CCD738 /* Assets.xcassets in Resources */,
+				7549D63A21E03E900082320E /* Words.storyboard in Resources */,
 				7552BA2721C4CB2B00CCD738 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,10 +295,9 @@
 			files = (
 				7553FEFA21D42CE000EC3152 /* WordsViewController.swift in Sources */,
 				7536734321C5FA88004C66B5 /* Notifications.swift in Sources */,
-				7552BA2421C4CB2B00CCD738 /* ViewController.swift in Sources */,
+				7552BA2421C4CB2B00CCD738 /* MainViewController.swift in Sources */,
 				7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */,
 				7536734121C561D7004C66B5 /* Words.swift in Sources */,
-				7553FEF821D4234200EC3152 /* WordTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +333,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7549D63821E03E900082320E /* Words.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7549D63921E03E900082320E /* Base */,
+			);
+			name = Words.storyboard;
+			sourceTree = "<group>";
+		};
 		7552BA2521C4CB2B00CCD738 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
