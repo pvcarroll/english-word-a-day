@@ -10,6 +10,7 @@
 		7536734121C561D7004C66B5 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734021C561D7004C66B5 /* Words.swift */; };
 		7536734321C5FA88004C66B5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536734221C5FA88004C66B5 /* Notifications.swift */; };
 		7549D63A21E03E900082320E /* Words.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7549D63821E03E900082320E /* Words.storyboard */; };
+		7549D63E21E295D40082320E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549D63D21E295D40082320E /* AppConstants.swift */; };
 		7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */; };
 		7552BA2421C4CB2B00CCD738 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BA2321C4CB2B00CCD738 /* MainViewController.swift */; };
 		7552BA2721C4CB2B00CCD738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BA2521C4CB2B00CCD738 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		7536734021C561D7004C66B5 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		7536734221C5FA88004C66B5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7549D63921E03E900082320E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Spanish English Word a Day/Base.lproj/Words.storyboard"; sourceTree = "<group>"; };
+		7549D63D21E295D40082320E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		7552BA1E21C4CB2B00CCD738 /* Spanish English Word a Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish English Word a Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552BA2121C4CB2B00CCD738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7552BA2321C4CB2B00CCD738 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				7552BA2821C4CB2B00CCD738 /* Assets.xcassets */,
 				7552BA2A21C4CB2B00CCD738 /* LaunchScreen.storyboard */,
 				7552BA2D21C4CB2C00CCD738 /* Info.plist */,
+				7549D63D21E295D40082320E /* AppConstants.swift */,
 			);
 			path = "Spanish English Word a Day";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7553FEFA21D42CE000EC3152 /* WordsViewController.swift in Sources */,
+				7549D63E21E295D40082320E /* AppConstants.swift in Sources */,
 				7536734321C5FA88004C66B5 /* Notifications.swift in Sources */,
 				7552BA2421C4CB2B00CCD738 /* MainViewController.swift in Sources */,
 				7552BA2221C4CB2B00CCD738 /* AppDelegate.swift in Sources */,

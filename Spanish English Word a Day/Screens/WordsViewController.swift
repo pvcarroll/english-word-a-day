@@ -11,13 +11,28 @@ import UIKit
 class WordsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var english = false
+    private var unselectedWords = Set<String>()
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        UserDefaults.standard.set(Array(unselectedWords), forKey: AppConstants.unselectedWordsKey)
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        let saveButtonText = (english ? Messages.buttonText.english : Messages.buttonText.spanish)
+        saveButton.setTitle(saveButtonText, for: .normal)
+        saveButton.layer.shadowOpacity = 0.2
+        saveButton.layer.masksToBounds = false
+        
+        if let savedWords = UserDefaults.standard.array(forKey: AppConstants.unselectedWordsKey) as? [String] {
+            unselectedWords = Set(savedWords)
+        }
     }
 }
 
@@ -39,9 +54,13 @@ extension WordsViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         let word = Words.words[indexPath.row]
         cell.textLabel?.text = "\(word.english) (\(word.spanish))"
-        // TODO: remember previous selection
-        cell.accessoryType = .checkmark
-        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        
+        if unselectedWords.contains(word.english) {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
         return cell
     }
 }
@@ -51,15 +70,18 @@ extension WordsViewController: UITableViewDelegate {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
         }
+        unselectedWords.remove(Words.words[indexPath.row].english)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
+        unselectedWords.insert(Words.words[indexPath.row].english)
     }
 }
 
 fileprivate struct Messages {
     static let header = Word(english: "Words to learn", spanish: "Palabras para aprender")
+    static let buttonText = Word(english: "SAVE", spanish: "SALVAR")
 }
