@@ -9,5 +9,5 @@
 import Foundation
 
 struct AppConstants {
-    static let unselectedWordsKey = "unselectedWords"
+    static let deselectedWordsKey = "deselectedWords"
 }

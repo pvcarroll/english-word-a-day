@@ -29,11 +29,18 @@ class Notifications {
         } else {
             firstNotificationDate = notificationDate
         }
-        for i in 0..<Words.words.count {
+        var filteredWords = [Word]()
+        if let deselectedWords = UserDefaults.standard.array(forKey: AppConstants.deselectedWordsKey) as? [String] {
+            let deselectedWordsSet = Set(deselectedWords)
+            filteredWords = Words.words.filter({ (word) -> Bool in
+                return !deselectedWordsSet.contains(word.english)
+            })
+        }
+        for i in 0..<filteredWords.count {
             guard let nextDay = Calendar.current.date(byAdding: .day, value: i, to: firstNotificationDate) else { return }
             let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextDay)
-            let englishWord = Words.words[i].english
-            let spanishWord = Words.words[i].spanish
+            let englishWord = filteredWords[i].english
+            let spanishWord = filteredWords[i].spanish
             let content = UNMutableNotificationContent()
             content.title = self.getTitle(hour: dateComponents.hour ?? 12)
             content.subtitle = "palabra para el dia (word for the day):"
@@ -47,7 +54,7 @@ class Notifications {
                     print ("ERROR adding notification request: \(err)")
                     return
                 }
-                if i == Words.words.count - 1 {
+                if i == filteredWords.count - 1 {
                     completion()
                 }
             })

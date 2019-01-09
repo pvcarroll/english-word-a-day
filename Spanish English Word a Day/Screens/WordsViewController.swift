@@ -14,10 +14,10 @@ class WordsViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     var english = false
-    private var unselectedWords = Set<String>()
+    private var deselectedWords = Set<String>()
     
     @IBAction func saveButton(_ sender: UIButton) {
-        UserDefaults.standard.set(Array(unselectedWords), forKey: AppConstants.unselectedWordsKey)
+        UserDefaults.standard.set(Array(deselectedWords), forKey: AppConstants.deselectedWordsKey)
         navigationController?.popViewController(animated: true)
     }
     
@@ -30,8 +30,8 @@ class WordsViewController: UIViewController {
         saveButton.layer.shadowOpacity = 0.2
         saveButton.layer.masksToBounds = false
         
-        if let savedWords = UserDefaults.standard.array(forKey: AppConstants.unselectedWordsKey) as? [String] {
-            unselectedWords = Set(savedWords)
+        if let savedWords = UserDefaults.standard.array(forKey: AppConstants.deselectedWordsKey) as? [String] {
+            deselectedWords = Set(savedWords)
         }
     }
 }
@@ -55,7 +55,7 @@ extension WordsViewController: UITableViewDataSource {
         let word = Words.words[indexPath.row]
         cell.textLabel?.text = "\(word.english) (\(word.spanish))"
         
-        if unselectedWords.contains(word.english) {
+        if deselectedWords.contains(word.english) {
             cell.accessoryType = .none
         } else {
             cell.accessoryType = .checkmark
@@ -70,14 +70,14 @@ extension WordsViewController: UITableViewDelegate {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
         }
-        unselectedWords.remove(Words.words[indexPath.row].english)
+        deselectedWords.remove(Words.words[indexPath.row].english)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
-        unselectedWords.insert(Words.words[indexPath.row].english)
+        deselectedWords.insert(Words.words[indexPath.row].english)
     }
 }
 
